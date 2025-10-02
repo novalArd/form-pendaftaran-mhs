@@ -20,12 +20,12 @@ body {
     background-color: #f0f2f5;
     color: var(--dark);
     line-height: 1.6;
-    padding-bottom: 50px; /* Tambahkan padding untuk footer */
+    padding-bottom: 50px; 
 }
 
 .container {
     display: flex;
-    min-height: calc(100vh - 50px); /* Sesuaikan tinggi untuk footer */
+    min-height: calc(100vh - 50px); /* tinggi (untuk footer)*/ 
 }
 
 /* Sidebar Styles */
@@ -388,11 +388,11 @@ body {
     }
     
     body {
-        padding-bottom: 0; /* Hapus padding di mobile */
+        padding-bottom: 0;
     }
     
     .footer {
-        position: relative; /* Footer tidak fixed di mobile */
+        position: relative;
     }
 }
 
@@ -448,5 +448,6 @@ body {
         animation: marquee 15s linear infinite;
     }
 }
+
 
 
