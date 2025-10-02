@@ -58,8 +58,8 @@ body {
 }
 
 .logo {
-    max-width: 35px;
-    max-height: 45px;
+    max-width: 55px;
+    max-height: 70px;
     object-fit: contain;
 }
 
@@ -448,6 +448,7 @@ body {
         animation: marquee 15s linear infinite;
     }
 }
+
 
 
 
