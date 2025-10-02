@@ -20,11 +20,12 @@ body {
     background-color: #f0f2f5;
     color: var(--dark);
     line-height: 1.6;
+    padding-bottom: 50px; /* Tambahkan padding untuk footer */
 }
 
 .container {
     display: flex;
-    min-height: 100vh;
+    min-height: calc(100vh - 50px); /* Sesuaikan tinggi untuk footer */
 }
 
 /* Sidebar Styles */
@@ -44,11 +45,22 @@ body {
     padding: 0 20px 20px;
     border-bottom: 1px solid rgba(255,255,255,0.2);
     margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.sidebar-header h2 {
-    font-size: 1.5rem;
-    font-weight: 600;
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    max-width: 180px;
+    max-height: 80px;
+    object-fit: contain;
 }
 
 .sidebar-steps {
@@ -319,6 +331,42 @@ body {
     background-color: var(--primary-dark);
 }
 
+/* Footer Styles */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-dark);
+    color: white;
+    padding: 10px 0;
+    z-index: 1000;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+}
+
+.marquee-container {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.marquee-content {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 20s linear infinite;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
 /* Responsive Styles */
 @media (max-width: 992px) {
     .container {
@@ -339,6 +387,14 @@ body {
         flex-direction: column;
         gap: 0;
     }
+    
+    body {
+        padding-bottom: 0; /* Hapus padding di mobile */
+    }
+    
+    .footer {
+        position: relative; /* Footer tidak fixed di mobile */
+    }
 }
 
 @media (max-width: 768px) {
@@ -358,6 +414,10 @@ body {
         margin-left: 0;
         margin-bottom: 10px;
         width: 100%;
+    }
+    
+    .marquee-content {
+        font-size: 1rem;
     }
 }
 
@@ -382,5 +442,10 @@ body {
     .radio-group, .checkbox-group {
         flex-direction: column;
         gap: 10px;
+    }
+    
+    .marquee-content {
+        font-size: 0.9rem;
+        animation: marquee 15s linear infinite;
     }
 }
